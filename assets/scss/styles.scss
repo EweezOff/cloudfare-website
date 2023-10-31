@@ -5,14 +5,12 @@
 --header-height: 3rem;
     --font-semi: 600;
 
-    /*===== Colores =====*/
-    /*Purple 260 - Red 355 - Blue 224 - Pink 340*/
-    /* HSL color mode */
+    /*===== Couleurs =====*/
     --hue-color: 224;
     --first-color: hsl(var(--hue-color), 89%, 60%);
     --second-color: hsl(var(--hue-color), 56%, 12%);
 
-    /*===== Fuente y tipografia =====*/
+    /*===== Font & Topographie =====*/
     --body-font: 'Poppins', sans-serif;
 
     --big-font-size: 2rem;
@@ -20,7 +18,7 @@
     --normal-font-size: .938rem;
     --smaller-font-size: .75rem;
 
-    /*===== Margenes =====*/
+    /*===== Margins =====*/
     --mb-2: 1rem;
     --mb-4: 2rem;
     --mb-5: 2.5rem;
@@ -67,7 +65,7 @@ img{
     display: block;
 }
 
-/*===== CLASS CSS ===== */
+/*===== CLASSES CSS ===== */
 .section-title{
     position: relative;
     font-size: var(--h2-font-size);
@@ -110,7 +108,7 @@ img{
     box-shadow: 0 1px 4px rgba(146,161,176,.15);
 }
 
-/*===== NAV =====*/
+/*===== NAVBAR =====*/
 .nav{
     height: var(--header-height);
     display: flex;
@@ -160,7 +158,6 @@ img{
         cursor: pointer;
     }
 }
-/*Active menu*/
 .active::after{
     position: absolute;
     content: '';
@@ -171,12 +168,10 @@ img{
     background-color: var(--first-color);
 }
 
-/*=== Show menu ===*/
 .show{
     right: 0;
 }
 
-/*===== HOME =====*/
 .home{
     position: relative;
     row-gap: 5rem;
@@ -238,7 +233,6 @@ img{
     }
 }
 
-/* ===== ABOUT =====*/
 .about{
     &__container{
         row-gap: 2rem;
@@ -258,7 +252,6 @@ img{
     }
 }
 
-/* ===== SKILLS =====*/
 .skills{
     &__container{
         row-gap: 2rem;
@@ -315,7 +308,6 @@ img{
         border-radius: .5rem;
     }
 }
-/* ===== WORK =====*/
 .work{
     &__container{
         row-gap: 2rem;
@@ -335,7 +327,6 @@ img{
     }
 }
 
-/* ===== CONTACT =====*/
 .contact{
     &__input{
         width: 100%;
@@ -357,7 +348,6 @@ img{
     }
 }
 
-/* ===== FOOTER =====*/
 .footer{
     background-color: var(--second-color);
     color: #fff;
