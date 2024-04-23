@@ -1,14 +1,24 @@
-name: Deploy to Server
+name: Deploy
+
 on:
   push:
     branches:
       - master
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Deploy to Server
-        run: |
-          ssh root@45.90.162.16 'cd /var/www/html && git pull origin master'
+
+      - name: SSH into server and pull changes
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd /var/www/html
+            git pull origin master
