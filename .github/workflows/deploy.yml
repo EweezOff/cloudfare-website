@@ -1,0 +1,14 @@
+name: Deploy to Server
+on:
+  push:
+    branches:
+      - master
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Deploy to Server
+        run: |
+          ssh root@45.90.162.16 'cd /var/www/html && git pull origin master'
