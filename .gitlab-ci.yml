@@ -1,0 +1,9 @@
+stages:
+  - deploy
+
+deploy:
+  stage: deploy
+  script:
+    - ssh root@45.90.162.16 'cd /var/www/html && git pull origin master'
+  only:
+    - master
