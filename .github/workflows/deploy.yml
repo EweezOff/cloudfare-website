@@ -1,0 +1,24 @@
+name: Deploy Repository
+
+on:
+  push:
+    branches:
+      - main  # ou toute autre branche que vous souhaitez déployer
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout du code
+      uses: actions/checkout@v2
+      
+    - name: Déploiement sur le serveur
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.SERVER_HOST }}
+        username: ${{ secrets.SERVER_USERNAME }}
+        password: ${{ secrets.SERVER_PASSWORD }}
+        script: |
+          cd /var/www/html  # Répertoire où vous souhaitez cloner le référentiel
+          git clone https://github.com/EweezOff/eweez.fr.git  # Remplacez par l'URL de votre référentiel
